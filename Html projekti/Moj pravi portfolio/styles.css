@@ -1,0 +1,371 @@
+:root{
+    --boja1: #6a00ce;
+    --boja2: #50bfff;
+    --boja3: #afffda;
+    --boja4: #587c6b;
+}
+
+.playfair-display-klasa {
+    font-family: "Playfair Display", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+body{
+    position: relative;
+    font-family: "Playfair Display", 'sans-serif';
+    font-size: 18px;
+    -webkit-text-stroke: 0.5px black;
+    text-shadow: 0px 0px 15px var(--boja4);
+    color: var(--boja1);
+    background-color: var(--boja3);
+    margin: 0 auto;
+    background-image: url("./Html projekti/Moj pravi portfolio/bgimg1.jpg");
+    background-repeat: repeat;
+    background-size: 200px auto;
+}
+#scroll-progress{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 10px;
+    background: rgb(0, 0, 0);
+    z-index: 9999;
+}
+#scroll-bar{
+    height: 100%;
+    width: 0%;
+    background: #afffda;
+    transition: width 0.1s linear;
+    z-index: 1000;
+}
+h1{
+    margin-left: 40px;
+    scroll-margin-top: 100px;
+}
+nav{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    z-index: 10;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    position: sticky;
+    top: 0;
+    background-image: linear-gradient(to bottom right, #50bfff, #6a00ce);
+    height: 100px;
+    align-items: center;
+}
+nav input{
+    display: none;
+}
+nav label{
+    position: relative;
+    font-size: 50px;
+    align-self: center;
+    right: 40px;
+    cursor: pointer;
+    color: #afffda;
+}
+nav h1{
+    color: #afffda;
+    -webkit-text-stroke: #6a00ce;
+    position: relative;
+    display: inline-block;
+    align-content: center;
+    margin: 10px;
+}
+nav div{
+    display: none;
+    width: 50%;
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+}
+nav div *{
+    display: inline-block;
+    margin: 10px;
+}
+#menu-toggle:checked ~ #nav-links {
+    display: flex;
+    width: 160px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    font-size: 30px;
+    flex-direction: column;
+    position: fixed;
+    right: 0px;
+    top:300px;
+    border: solid black 2px;
+    background-color: hsl(202, 100%, 28%);
+}
+/*cisto estetike radi:*/
+a{
+    color: #afffda;
+    -webkit-text-stroke: 0;
+}
+a:visited{
+    color: hsl(152, 100%, 54%);
+}
+img{
+    border: solid hsl(51, 100%, 35%) 7px;
+    border-radius: 10px;
+}
+.okrugla{
+    border-radius: 50%;
+}
+progress{
+    height: 33px;
+    width: 80%;
+}
+ul{
+    list-style-type: none;
+}
+summary{
+    cursor: pointer;
+    font-weight: 900;
+    text-decoration: underline;
+}
+summary::marker {
+    content: "";
+}
+/*do ovdje*/
+#hero{
+    gap: 20px;
+    text-align: center;
+    justify-self: center;
+    width: 75%;
+    font-size: 30px;
+}
+#hero img{
+    width: 300px;
+}
+#o-meni{
+    max-width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 10px;
+    background-color: rgba(106, 00, 206, 0.72);
+    border-bottom: solid black 2px;
+    border-top: solid black 2px;
+    color: #68c8ff;
+    -webkit-text-stroke: 0px;
+    text-shadow: #000000 3px 3px 2px;
+    text-align: justify;
+    font-size: 30px;
+}
+#o-meni img{
+    width: clamp(250px, 30%, 500px);
+    display: block;
+}
+@media (max-width: 1150px) {
+  #o-meni {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  #o-meni img {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+}
+#vjestine{
+    font-size: 30px;
+}
+#projekti{
+    display: grid;
+    grid-template-columns: auto;
+    justify-self: center;
+    width: 90%;
+    max-width: 800px;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px;
+    background-color: rgba(106, 00, 206, 0.72);
+    border: solid black 7px;
+    color: #68c8ff;
+    -webkit-text-stroke: 0px;
+    text-shadow: #000000 3px 3px 2px;
+    text-align: center;
+    font-size: 27px;
+    border-radius: 10px;
+}
+#projekti article{
+    justify-items: center;
+    border-top: dotted black 8px;
+    padding-top: 30px;
+    margin-bottom: 30px;
+}
+/*da bude samo izmedju projekata odvojeno:*/
+#projekti article:first-child{
+    border-top: none;
+}
+#projekti article img{
+    width: 80%;
+}
+#projekti article details p{
+    padding: 10px;
+    border-left: solid black 1px;
+    border-right: solid black 1px;
+    text-align: justify;
+}
+#blogovi{
+    text-align: justify;
+    justify-self: center;
+    width: 90%;
+    overflow-y: scroll;
+    height: 400px;
+    color: black;
+    border: solid black 1px;
+    border-radius: 10px;
+    font-size: 25px;
+}
+#blogovi .omotac-blogova{
+    background-image: url("./Html projekti/Moj pravi portfolio/blogbgimg.jpg");
+    background-repeat: repeat;
+    background-size: 200px auto;
+}
+#blogovi .omotac-blogova div{
+    margin: 11px;
+    padding: 11px;
+    display: inline-block;
+    border: solid black 2px;
+    border-radius: 10px;
+}
+#galerija{
+    justify-self: center;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-top: 70px;
+    border: solid black 1px;
+    border-radius: 10px;
+    background-color: #50bfff;
+    overflow-x: scroll;
+    background-image: url("./Html projekti/Moj pravi portfolio/blogbgimg.jpg");
+    background-repeat: repeat;
+    background-size: 200px auto;
+}
+.img-wrapper img{
+    height: 300px;
+}
+.img-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.img-wrapper::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 105%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgb(0,0,0);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    white-space: nowrap;
+    font-size: 20px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.img-wrapper:hover::after {
+    opacity: 1;
+}
+
+#kontakt{
+    width: clamp(900px, 90%, 1000px);
+    margin: 40px;
+    display: flex;
+    justify-self: center;
+    justify-content: center;
+    gap: 10%;
+    background-color: #6a00ce;
+    border: solid black 1px;
+    border-radius: 10px;
+    background-image: url("./Html projekti/Moj pravi portfolio/kontaktimg.jpg");
+    background-repeat: repeat;
+    background-size: 200px auto;
+}
+#kontakt form input, textarea{
+    display: block;
+    margin: 10px;
+}
+#kontakt form{
+    display: inline-block;
+    width: 43%;
+    -webkit-text-stroke: 0px;
+    text-shadow: 0px 0px 0px #fff;
+}
+#kontakt div{
+    margin: 10px;
+    display: inline-block;
+    color:white;
+    justify-items: center;
+    -webkit-text-stroke: 0px;
+    text-shadow: 0px 0px 0px #6a00ce;
+}
+#kontakt div :first-child{
+    font-size: 30px;
+    text-align: center;
+    text-decoration: underline 2px;
+}
+@media (max-width: 1000px) {
+  #kontakt{
+    width: 60%;
+    flex-direction: column;
+    justify-self: center;
+    justify-items: center;
+    align-items: center;
+    gap: 20px;
+  }
+  #kontakt form{
+    width: 80%;
+  }
+}
+footer{
+    justify-items: center;
+    -webkit-text-stroke: 0px;
+    text-shadow: 0px 0px 0px #000000;
+}
+/*hover efekti tj animacije*/
+summary:hover{
+    transform: translateY(-5px);
+    transition: transform 0.3s ease;
+}
+#hamburger:hover{
+    transform: rotate(180deg);
+    transition: transform 0.5s ease;
+}
+a:hover{
+    transform: scale(1.1);
+    transition: transform 0.3s ease;
+}
+[type="submit"]:hover{
+    transform: rotate(6deg);
+    transition: transform 0.2s ease;
+}
+/*js related stvari*/
+#backToTop{
+    display: none;
+    cursor: pointer;
+    position: fixed;
+    bottom: 130px;
+    right: 50px;
+    background-color: #587c6b;
+    color: #ffffff;
+    border: none;
+    box-shadow: #000000 4px 4px;
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    -webkit-text-stroke: 0px;
+    font-size: 30px;
+}
